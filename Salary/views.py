@@ -10,11 +10,11 @@ from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def home(request):
     employees=Employee.objects.all()
-    return render(request,'salary/home.html',{'employees':employees})
+    return render(request,'Salary/home.html',{'employees':employees})
 
 def detail(request,id):
     employee=Employee.objects.get(id=id)
-    return render(request,'salary/employee_detail.html',{'employee':employee})
+    return render(request,'Salary/employee_detail.html',{'employee':employee})
 def add_employee(request):
     if request.method=='POST':
         form=EmployeeForm(request.POST)
